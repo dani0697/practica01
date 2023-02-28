@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class EstadoServiceImpl implements EstadoService {
     
     @Autowired
-    EstadoDao estadoDao;
+    private EstadoDao estadoDao;
     
     @Override
     @Transactional(readOnly = true)
@@ -40,6 +40,6 @@ public class EstadoServiceImpl implements EstadoService {
     @Override
     @Transactional(readOnly = true)
     public Estado getEstado(Estado estado) {
-        return estadoDao.findById(estado.getId_estado()).orElse(null);
+        return estadoDao.findById(estado.getIdEstado()).orElse(null);
     } 
 }

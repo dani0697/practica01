@@ -11,40 +11,39 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
 
     </head>
     <body>
-        <header th:replace="layout/plantilla :: header"/>
+        <header th:replace="layout/plantilla1 :: header"/>
         <h2>Estados</h2>
         <a th:href="@{/nuevoEstado}">Nuevo Estado</a>
+        <br/>
         <div th:if="${estado != null and !estado.empty}">
             <table border="1">
                 <thead>
-                    <tr>
-                        <th>Nombre</th>
-                        <th>Numero de provincias</th>
-                        <th>Poblacion</th>
-                        <th>Numero de presidentes</th>
-                        <th>Modificar</th>
-                        <th>Eliminar</th>
-                    </tr>
+                <th>Capital</th>
+                <th>Poblacion</th>
+                <th>idioma</th>
+                <th>Codigo</th>
+                <th>Moneda</th>
+                <th>Modificar</th>
+                <th>Eliminar</th>
                 </thead>
                 <tbody>
                     <tr th:each="estado : ${estado}">
-                        <td th:text="${estado.nombre}"></td>
                         <td th:text="${estado.capital}"></td>
                         <td th:text="${estado.poblacion}"></td>
                         <td th:text="${estado.idioma}"></td>
-                        <td th:text="${estado.codigoPais}"></td>
+                        <td th:text="${estado.codigo}"></td>
                         <td th:text="${estado.moneda}"></td>
-                        <td><a th:href="@{/modificarEstado/}+${estado.idEstado}">Modificar</a></td>
-                        <td><a th:href="@{/eliminarEstado/}+${estado.idEstado}">Eliminar</a></td>
+                        <td><a th:href="@{/modificarEstado/}+${Estado.idEstado}">Modificar</a></td>
+                        <td><a th:href="@{/eliminarEstado/}+${Estado.idEstado}">Eliminar</a></td>
                     </tr>
                 </tbody>
                 </thead>
             </table>
         </div>
-        <div th:if="${estado == null or estados.empty}"> 
+        <div th:if="${estado == null or estado.empty}"> 
             La lista de estados se encuentra vacía
         </div>
-        <footer th:replace="layout/plantilla :: footer"/>
+        <footer th:replace="layout/plantilla1 :: footer"/>
 
 
     </body>
