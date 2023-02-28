@@ -4,10 +4,17 @@
  */
 package com.Practica01.service;
 
+import com.estado.domain.Estado;
+import java.util.List;
+
 /**
  *
- * @author acast
+ * @author candr
  */
 public interface EstadoService {
-    
+   public List<Estado> getEstados();
+   
+   public void save(Estado cliente);
+   public void delete(Estado cliente);
+   public Estado getEstado(Estado cliente);
 }
