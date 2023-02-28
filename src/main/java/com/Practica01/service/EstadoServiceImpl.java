@@ -5,8 +5,9 @@
 package com.Practica01.service;
 
 
+
 import com.Practica01.dao.EstadoDao;
-import com.estado.domain.Estado;
+import com.Practica01.domain.Estado;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,12 +17,12 @@ import org.springframework.transaction.annotation.Transactional;
 public class EstadoServiceImpl implements EstadoService {
     
     @Autowired
-    private EstadoDao estadoDao;
+    EstadoDao estadoDao;
     
     @Override
     @Transactional(readOnly = true)
-    public List<Estado> getEstados() {
-        return (List<Estado>) estadoDao.findAll();
+    public List<Estado> getEstado() {
+        return (List<Estado>)estadoDao.findAll();
     }
     
     @Override
@@ -39,6 +40,6 @@ public class EstadoServiceImpl implements EstadoService {
     @Override
     @Transactional(readOnly = true)
     public Estado getEstado(Estado estado) {
-        return estadoDao.findById(estado.getIdEstado()).orElse(null);
+        return estadoDao.findById(estado.getId_estado()).orElse(null);
     } 
 }

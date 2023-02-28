@@ -13,11 +13,9 @@ import lombok.Data;
 @Table(name="estado")
 public class Estado {
     private static final Long serialVersionUID = 1L;
-    
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    
-    private Long idEstado;
+    private Long id_estado;
     String capital;
     String poblacion;
     String idioma;
@@ -27,8 +25,8 @@ public class Estado {
     public Estado() {
     }
 
-    public Estado(Long idEstado, String capital, String poblacion, String idioma, String codigoPais, String moneda) {
-        this.idEstado = idEstado;
+    public Estado(Long id_estado, String capital, String poblacion, String idioma, String codigoPais, String moneda) {
+        this.id_estado = id_estado;
         this.capital = capital;
         this.poblacion = poblacion;
         this.idioma = idioma;

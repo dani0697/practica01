@@ -1,7 +1,7 @@
 package com.Practica01.controller;
 
+import com.Practica01.domain.Estado;
 import com.Practica01.service.EstadoService;
-import com.estado.domain.Estado;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,10 +17,10 @@ public class IndexControler {
     EstadoService estadoService;
     @GetMapping("/")
     public String inicio(Model model){
-        log.info("Estamos usando una arquitectura MVC");
-        var estados=estadoService.getEstados();
+        log.info("Usando una arquitectura MVC");
+        var estado=estadoService.getEstado();
                 
-        model.addAttribute("estados",estados);
+        model.addAttribute("estados",estado);
         return "index";
     }
     

@@ -14,7 +14,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <header th:replace="layout/plantilla :: header"/>
         <h2>Estados</h2>
         <a th:href="@{/nuevoEstado}">Nuevo Estado</a>
-        <div th:if="${estados != null and !estados.empty}">
+        <div th:if="${estado != null and !estado.empty}">
             <table border="1">
                 <thead>
                     <tr>
@@ -27,7 +27,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     </tr>
                 </thead>
                 <tbody>
-                    <tr th:each="estado : ${estados}">
+                    <tr th:each="estado : ${estado}">
                         <td th:text="${estado.nombre}"></td>
                         <td th:text="${estado.capital}"></td>
                         <td th:text="${estado.poblacion}"></td>
@@ -41,7 +41,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                 </thead>
             </table>
         </div>
-        <div th:if="${estados == null or estados.empty}"> 
+        <div th:if="${estado == null or estados.empty}"> 
             La lista de estados se encuentra vacía
         </div>
         <footer th:replace="layout/plantilla :: footer"/>
