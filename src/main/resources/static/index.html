@@ -1,15 +1,31 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
--->
-<html>
+
+<html xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <h1>Estados</h1>
+        <table border="1">
+            <thead>
+                <th>Capital</th>
+                <th>Poblacion</th>
+                <th>Idioma</th>
+                <th>Codigo</th>
+                <th>Moneda</th>
+            </thead>
+            <tbody>
+                <tr th:each="estado : ${estados}">
+                    <td th:text="${estado.capital}"></td>
+                    <td th:text="${estado.poblacion}"></td>
+                    <td th:text="${estado.idioma}"></td>
+                    <td th:text="${estado.codigoPais}"></td>
+                    <td th:text="${estado.moneda}"></td>
+                </tr>
+            </tbody>
+            
+        </table>
     </body>
 </html>
