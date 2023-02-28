@@ -18,9 +18,10 @@ public class IndexControler {
     @GetMapping("/")
     public String inicio(Model model){
         log.info("Usando una arquitectura MVC");
+        
         var estado=estadoService.getEstado();
-                
-        model.addAttribute("estados",estado);
+           
+        model.addAttribute("estado",estado);
         return "index";
     }
     

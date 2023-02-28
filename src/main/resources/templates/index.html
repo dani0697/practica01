@@ -33,8 +33,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <td th:text="${estado.idioma}"></td>
                         <td th:text="${estado.codigo}"></td>
                         <td th:text="${estado.moneda}"></td>
-                        <td><a th:href="@{/modificarEstado/}+${Estado.idEstado}">Modificar</a></td>
-                        <td><a th:href="@{/eliminarEstado/}+${Estado.idEstado}">Eliminar</a></td>
+                        <td><a th:href="@{/modificarEstado/}+${estado.idEstado}">Modificar</a></td>
+                        <td><a th:href="@{/eliminarEstado/}+${estado.idEstado}">Eliminar</a></td>
                     </tr>
                 </tbody>
                 </thead>
