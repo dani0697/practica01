@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <link href="css/estilo1.css" rel="stylesheet" type="text/css"/>
+
+    </head>
+    <body>
+        <header th:replace="layout/plantilla :: header"/>
+        <h2>Estados</h2>
+        <a th:href="@{/nuevoEstado}">Nuevo Estado</a>
+        <div th:if="${estados != null and !estados.empty}">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Numero de provincias</th>
+                        <th>Poblacion</th>
+                        <th>Numero de presidentes</th>
+                        <th>Modificar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="estado : ${estados}">
+                        <td th:text="${estado.nombre}"></td>
+                        <td th:text="${estado.capital}"></td>
+                        <td th:text="${estado.poblacion}"></td>
+                        <td th:text="${estado.idioma}"></td>
+                        <td th:text="${estado.codigoPais}"></td>
+                        <td th:text="${estado.moneda}"></td>
+                        <td><a th:href="@{/modificarEstado/}+${estado.idEstado}">Modificar</a></td>
+                        <td><a th:href="@{/eliminarEstado/}+${estado.idEstado}">Eliminar</a></td>
+                    </tr>
+                </tbody>
+                </thead>
+            </table>
+        </div>
+        <div th:if="${estados == null or estados.empty}"> 
+            La lista de estados se encuentra vacía
+        </div>
+        <footer th:replace="layout/plantilla :: footer"/>
+
+
+    </body>
+</html>
+

@@ -1,3 +1,4 @@
+
 package com.Practica01.domain;
 
 import jakarta.persistence.Entity;
@@ -5,31 +6,36 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import java.io.Serializable;
 import lombok.Data;
 
 @Data
 @Entity
 @Table(name="estado")
-public class Estado implements Serializable{
+public class Estado {
+    private static final Long serialVersionUID = 1L;
     
-    private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)      
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    
     private Long idEstado;
-    private String nombre;
-    private int num_provincias;
-    private int poblacion;
-    private int num_presidentes;
-
-    public Estado(String nombre, int num_provincias, int poblacion, int num_presidentes) {
-        this.nombre = nombre;
-        this.num_provincias = num_provincias;
-        this.poblacion = poblacion;
-        this.num_presidentes = num_presidentes;
-    }
+    String capital;
+    String poblacion;
+    String idioma;
+    String codigoPais;
+    String moneda;
 
     public Estado() {
     }
+
+    public Estado(Long idEstado, String capital, String poblacion, String idioma, String codigoPais, String moneda) {
+        this.idEstado = idEstado;
+        this.capital = capital;
+        this.poblacion = poblacion;
+        this.idioma = idioma;
+        this.codigoPais = codigoPais;
+        this.moneda = moneda;
+    }
+    
+    
     
 }

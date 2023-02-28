@@ -11,11 +11,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 @Slf4j
-
 public class IndexControler {
     
     @Autowired
-    private EstadoService estadoService;
+    EstadoService estadoService;
     @GetMapping("/")
     public String inicio(Model model){
         log.info("Estamos usando una arquitectura MVC");
